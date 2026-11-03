@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title', $category->exists ? 'Modifier une catégorie' : 'Nouvelle catégorie')
+@section('content')
+<div class="page-head"><div><div class="eyebrow">CATÉGORIES</div><h1 class="page-title">{{ $category->exists ? 'Modifier la catégorie' : 'Nouvelle catégorie' }}</h1></div><a class="btn btn-soft" href="{{ route('categories.index') }}">← Retour</a></div><div class="form-shell"><form class="panel form-panel" method="post" action="{{ $category->exists ? route('categories.update', $category) : route('categories.store') }}">@csrf @if($category->exists)@method('put')@endif<label class="form-label" for="name">Nom *</label><input class="form-control mb-3" id="name" name="name" value="{{ old('name', $category->name) }}" required><label class="form-label" for="description">Description</label><textarea class="form-control" id="description" name="description" rows="4">{{ old('description', $category->description) }}</textarea><div class="d-flex justify-content-end gap-2 mt-4"><a class="btn btn-light" href="{{ route('categories.index') }}">Annuler</a><button class="btn btn-brand">Enregistrer</button></div></form></div>
+@endsection
