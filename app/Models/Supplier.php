@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Supplier extends Model
 {
     protected $fillable = ['name', 'email', 'phone', 'address'];
-    public function products(): HasMany { return $this->hasMany(Product::class); }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
 }
