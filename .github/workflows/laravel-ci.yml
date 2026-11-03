@@ -1,0 +1,44 @@
+name: Laravel CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Configurer PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, pdo_sqlite, sqlite3
+          coverage: none
+
+      - name: Installer les dépendances
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Préparer Laravel
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Vérifier la syntaxe PHP
+        run: find app bootstrap config database public resources routes tests -type f -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Vérifier le formatage Pint
+        run: vendor/bin/pint --test
+
+      - name: Exécuter les tests
+        run: php artisan test
+
+      - name: Auditer les dépendances Composer
+        run: composer audit --locked
