@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Tableau de bord') · NexaStock</title>
-    <link rel="icon" href="{{ asset('nexastock-logo.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('logo-mark.svg') }}" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link
@@ -492,7 +492,7 @@
                     class="nav-text">Rapports</span></a>
             <div class="account"><span class="avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
                 <div class="flex-grow-1"><strong>{{ auth()->user()->name }}</strong><small>Administrateur</small></div>
-                <form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-sm text-secondary"
+                <form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-danger btn-sm text-secondary"
                         title="Se déconnecter"><i class="bi bi-box-arrow-left" aria-hidden="true"></i></button></form>
             </div>
         </aside>
