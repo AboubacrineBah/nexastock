@@ -492,7 +492,7 @@
                     class="nav-text">Rapports</span></a>
             <div class="account"><span class="avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
                 <div class="flex-grow-1"><strong>{{ auth()->user()->name }}</strong><small>Administrateur</small></div>
-                <form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-danger btn-sm text-secondary"
+                <form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-danger btn-sm"
                         title="Se déconnecter"><i class="bi bi-box-arrow-left" aria-hidden="true"></i></button></form>
             </div>
         </aside>
