@@ -474,7 +474,8 @@
                     alt=""><span><strong>NexaStock</strong><small>par NexaWeb Mali</small></span></a>
             <div class="nav-label">ESPACE DE TRAVAIL</div>
             <a class="side-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"><span
-                    class="glyph"><i class="bi bi-speedometer2" aria-hidden="true"></i></span><span class="nav-text">Tableau de bord</span></a>
+                    class="glyph"><i class="bi bi-speedometer2" aria-hidden="true"></i></span><span class="nav-text">Tableau
+                    de bord</span></a>
             <a class="side-link {{ request()->routeIs('articles.*') ? 'active' : '' }}"
                 href="{{ route('articles.index') }}"><span class="glyph"><i class="bi bi-box-seam"
                         aria-hidden="true"></i></span><span class="nav-text">Articles</span></a>
@@ -510,7 +511,9 @@
                 @yield('content')
             </main>
         </div>
-    @else @yield('guest-content') @endauth
+    @else
+        @yield('guest-content')
+    @endauth
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     @stack('scripts')
 </body>
