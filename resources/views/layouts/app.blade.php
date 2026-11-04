@@ -8,6 +8,7 @@
     <title>@yield('title', 'Tableau de bord') · NexaStock</title>
     <link rel="icon" href="{{ asset('nexastock-logo.svg') }}" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap"
         rel="stylesheet">
@@ -469,28 +470,30 @@
 <body>
     @auth
         <aside class="sidebar">
-            <a class="brand" href="{{ route('dashboard') }}"><img src="{{ asset('nexastock-logo.svg') }}"
+            <a class="brand" href="{{ route('dashboard') }}"><img src="{{ asset('logo-mark.svg') }}"
                     alt=""><span><strong>NexaStock</strong><small>par NexaWeb Mali</small></span></a>
             <div class="nav-label">ESPACE DE TRAVAIL</div>
             <a class="side-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"><span
-                    class="glyph">⌂</span><span class="nav-text">Tableau de bord</span></a>
+                    class="glyph"><i class="bi bi-speedometer2" aria-hidden="true"></i></span><span class="nav-text">Tableau de bord</span></a>
             <a class="side-link {{ request()->routeIs('articles.*') ? 'active' : '' }}"
-                href="{{ route('articles.index') }}"><span class="glyph">▤</span><span class="nav-text">Articles</span></a>
+                href="{{ route('articles.index') }}"><span class="glyph"><i class="bi bi-box-seam"
+                        aria-hidden="true"></i></span><span class="nav-text">Articles</span></a>
             <a class="side-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
-                href="{{ route('categories.index') }}"><span class="glyph">◫</span><span
-                    class="nav-text">Catégories</span></a>
+                href="{{ route('categories.index') }}"><span class="glyph"><i class="bi bi-list"
+                        aria-hidden="true"></i></span><span class="nav-text">Catégories</span></a>
             <a class="side-link {{ request()->routeIs('mouvements.*') ? 'active' : '' }}"
-                href="{{ route('mouvements.index') }}"><span class="glyph">⇄</span><span
-                    class="nav-text">Mouvements</span></a>
+                href="{{ route('mouvements.index') }}"><span class="glyph"><i class="bi bi-arrow-left-right"
+                        aria-hidden="true"></i></span><span class="nav-text">Mouvements</span></a>
             <a class="side-link {{ request()->routeIs('fournisseurs.*') ? 'active' : '' }}"
-                href="{{ route('fournisseurs.index') }}"><span class="glyph">♧</span><span
-                    class="nav-text">Fournisseurs</span></a>
+                href="{{ route('fournisseurs.index') }}"><span class="glyph"><i class="bi bi-truck"
+                        aria-hidden="true"></i></span><span class="nav-text">Fournisseurs</span></a>
             <a class="side-link {{ request()->routeIs('rapports') ? 'active' : '' }}" href="{{ route('rapports') }}"><span
-                    class="glyph">▥</span><span class="nav-text">Rapports</span></a>
+                    class="glyph"><i class="bi bi-file-earmark-bar-graph" aria-hidden="true"></i></span><span
+                    class="nav-text">Rapports</span></a>
             <div class="account"><span class="avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
                 <div class="flex-grow-1"><strong>{{ auth()->user()->name }}</strong><small>Administrateur</small></div>
                 <form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-sm text-secondary"
-                        title="Se déconnecter">↗</button></form>
+                        title="Se déconnecter"><i class="bi bi-box-arrow-left" aria-hidden="true"></i></button></form>
             </div>
         </aside>
         <div class="main">
