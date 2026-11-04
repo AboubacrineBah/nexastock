@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312" role="img" aria-label="Symbole NexaStock">
+  <rect x="0" y="0" width="312" height="312" rx="72" fill="#123B35"/>
+  <path d="M80 114 156 72l76 42v84l-76 43-76-43z" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linejoin="round"/>
+  <path d="m82 116 74 42 74-42M156 159v79" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M105 185v21M134 172v34M164 159v47" stroke="#2BAE9A" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="232" cy="79" r="17" fill="#D9E66D"/>
+</svg>
