@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-6 col-xl-3">
-            <div class="panel stat-card"><span class="stat-icon"><i class="bi bi-currency-franc"
+            <div class="panel stat-card"><span class="stat-icon"><i class="bi bi-cash-stack"
                         aria-hidden="true"></i></span>
                 <div class="label">Valeur du stock</div>
                 <div class="value" style="font-size:24px">{{ number_format((float) $stockValue, 0, ',', ' ') }} F</div>
