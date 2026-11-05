@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\StockMovement;
 use App\Models\Supplier;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -29,5 +31,15 @@ class DashboardController extends Controller
             'movementCount' => StockMovement::count(),
             'stockValue' => Product::select(DB::raw('COALESCE(SUM(quantity * unit_cost), 0) as total'))->value('total'),
         ]);
+    }
+
+    public function stockPdf(): Response
+    {
+        $products = Product::with('category')->orderBy('quantity')->get();
+        $stockValue = Product::select(DB::raw('COALESCE(SUM(quantity * unit_cost), 0) as total'))->value('total');
+
+        return Pdf::loadView('reports.stock-pdf', compact('products', 'stockValue'))
+            ->setPaper('a4', 'landscape')
+            ->download('etat-stock-'.now()->format('Y-m-d').'.pdf');
     }
 }

@@ -21,4 +21,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/mouvements/nouveau', [StockMovementController::class, 'create'])->name('mouvements.create');
     Route::post('/mouvements', [StockMovementController::class, 'store'])->name('mouvements.store');
     Route::get('/rapports', [DashboardController::class, 'reports'])->name('rapports');
+    Route::get('/rapports/stock/pdf', [DashboardController::class, 'stockPdf'])->name('rapports.stock.pdf');
 });

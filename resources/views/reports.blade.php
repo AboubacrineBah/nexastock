@@ -6,7 +6,8 @@
             <div class="eyebrow">ANALYSE DU STOCK</div>
             <h1 class="page-title">Rapports</h1>
             <p class="subtitle">Synthèse instantanée de votre stock et de sa valorisation.</p>
-        </div><button class="btn btn-soft" onclick="window.print()">Imprimer cette page</button>
+        </div><a class="btn btn-soft" href="{{ route('rapports.stock.pdf') }}"><i class="bi bi-file-earmark-pdf"
+                aria-hidden="true"></i> Télécharger le PDF</a>
     </div>
     <div class="row g-3 mb-4">
         <div class="col-md-6">
