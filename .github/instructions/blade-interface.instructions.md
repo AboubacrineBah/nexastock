@@ -1,8 +1,6 @@
 ---
 description: "Use when inspecting or changing NexaStock Blade templates, CSS, forms, navigation, responsive behavior, accessibility, or Bootstrap UI."
-applyTo:
-  - "resources/views/**/*.blade.php"
-  - "resources/css/**/*.css"
+applyTo: "resources/views/**/*.blade.php, resources/css/**/*.css"
 ---
 
 # Interface Blade — accompagnement guidé

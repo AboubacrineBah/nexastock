@@ -1,10 +1,7 @@
 ---
 description: "Use when editing PHP, Laravel routes, Eloquent models, controllers, migrations, seeders, or PHPUnit tests in NexaStock."
 applyTo:
-  - "app/**/*.php"
-  - "routes/**/*.php"
-  - "database/**/*.php"
-  - "tests/**/*.php"
+  "{app,routes,database,tests}/**/*.php"
 ---
 
 # Conventions PHP et Laravel
